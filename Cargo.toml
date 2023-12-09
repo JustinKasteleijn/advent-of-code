@@ -10,3 +10,4 @@ nom = { version = "7.1.3", features = [] }
 nom-supreme = "0.8.0"
 rayon = "1.8.0"
 indicatif = "0.17.7"
+itertools = "0.12.0"

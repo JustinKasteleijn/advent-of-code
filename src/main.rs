@@ -11,6 +11,8 @@ enum Days {
     Day4,
     Day5,
     Day6,
+    Day7,
+    Day8
 }
 
 fn day_to_problem(day: Days) -> Option<Box<dyn Problem>> {
@@ -21,13 +23,15 @@ fn day_to_problem(day: Days) -> Option<Box<dyn Problem>> {
         Days::Day4 => Some(Box::new(day04::day_four::DayFour{})),
         Days::Day5 => Some(Box::new(day05::day_five::DayFive{})),
         Days::Day6 => Some(Box::new(day06::day_six::DaySix{})),
+        Days::Day7 => Some(Box::new(day07::day_seven::DaySeven{})),
+        Days::Day8 => Some(Box::new(day08::day_eight::DayEight{})),
     }
 }
 
 fn main() {
-    let problem = day_to_problem(Days::Day6);
+    let problem = day_to_problem(Days::Day8);
     match problem {
-        Some(problem) => println!("{}", problem.part_two(include_str!("../src/days/day06/input.txt"))),
+        Some(problem) => println!("{}", problem.part_two(include_str!("../src/days/day08/input.txt"))),
         None => println!("Not yet implemented")
     }
 }
