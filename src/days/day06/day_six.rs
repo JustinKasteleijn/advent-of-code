@@ -1,11 +1,11 @@
+use nom::{IResult, Parser};
 use nom::bytes::streaming::is_not;
 use nom::character::complete;
 use nom::character::complete::{digit1, line_ending, space1};
-use nom::combinator::complete;
 use nom::multi::separated_list1;
-use nom::{IResult, Parser};
 use nom::sequence::separated_pair;
-use nom_supreme::{ParserExt};
+use nom_supreme::ParserExt;
+
 use crate::problem::Problem;
 
 pub(crate) struct DaySix;
@@ -66,8 +66,9 @@ impl Problem for DaySix {
 }
 
 mod tests {
-    use super::*;
     use crate::problem::Problem;
+
+    use super::*;
 
     #[test]
     fn part_one() {

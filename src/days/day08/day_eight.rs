@@ -1,14 +1,15 @@
 use std::collections::BTreeMap;
-use std::ptr::replace;
+
+use nom::{IResult, Parser};
 use nom::branch::alt;
 use nom::bytes::complete::{tag, take_until};
 use nom::character::complete;
-use nom::combinator::{complete, opt};
-use nom::{IResult, Parser};
-use nom::character::complete::{line_ending, multispace0, multispace1, newline, not_line_ending, space1};
+use nom::character::complete::{multispace1, space1};
+use nom::combinator::opt;
 use nom::error::Error;
 use nom::multi::many1;
-use nom::sequence::{preceded, separated_pair, terminated};
+use nom::sequence::{preceded, separated_pair};
+
 use crate::problem::Problem;
 
 pub struct DayEight;
@@ -109,7 +110,6 @@ impl Problem for DayEight {
         let results = current_nodes
             .iter()
             .map(|node| {
-                let mut visited = vec![*node];
                 let mut current_node = *node;
 
                 instructions

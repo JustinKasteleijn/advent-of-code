@@ -1,7 +1,7 @@
 use std::collections::BTreeMap;
 use std::ops::Not;
 
-use nom::{IResult};
+use nom::IResult;
 use nom::bytes::complete::tag;
 use nom::character::complete::{alpha1, line_ending};
 use nom::character::complete;
@@ -108,7 +108,8 @@ impl Problem for DayTwo {
 }
 
 mod tests {
-    use super::*;
+    use crate::days::day02::day_two::DayTwo;
+    use crate::problem::Problem;
 
     #[test]
     fn _part_one() {

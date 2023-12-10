@@ -1,10 +1,12 @@
 use std::collections::BTreeMap;
+
+use nom::IResult;
 use nom::bytes::complete::tag;
 use nom::character::complete;
-use nom::character::complete::{space1};
-use nom::{IResult};
+use nom::character::complete::space1;
 use nom::multi::separated_list1;
 use nom::sequence::{preceded, separated_pair, terminated, tuple};
+
 use crate::problem::Problem;
 
 pub struct DayFour;
@@ -126,7 +128,8 @@ impl Problem for DayFour {
 }
 
 mod tests {
-    use super::*;
+    use crate::days::day04::day_four::DayFour;
+    use crate::problem::Problem;
 
     #[test]
     fn part_one() {

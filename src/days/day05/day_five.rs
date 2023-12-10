@@ -1,12 +1,14 @@
 use std::ops::Range;
-use nom::character::complete;
-use nom::character::complete::{line_ending, space1};
-use nom_supreme::{ParserExt, tag::complete::tag};
+
 use nom::{IResult, Parser};
 use nom::bytes::complete::take_until;
+use nom::character::complete;
+use nom::character::complete::{line_ending, space1};
 use nom::multi::{many1, separated_list1};
 use nom::sequence::{separated_pair, tuple};
+use nom_supreme::{ParserExt, tag::complete::tag};
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
+
 use crate::problem::Problem;
 
 pub(crate) struct DayFive;

@@ -1,4 +1,5 @@
 use std::collections::{BTreeMap, HashSet};
+
 use crate::problem::Problem;
 
 pub struct DayThree;
